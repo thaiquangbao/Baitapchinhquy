@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style type="text/css">
+        body{
+            font-family: Arial, Verdana, sans-serif;
+            font-size: 18px;
+        }
+        div{
+            border-bottom: 1px solid #efefef;
+            margin: auto;
+            padding-bottom: 10px;
+            padding-top: 5px;
+            width: 720px;
+        }
+        .title{
+            float: left;
+            width: 200px;
+            text-align: align;
+            padding-right: 10px;
+            color: black;
+            font-size: 18px;
+        }
+        .radio-buttons label{
+            float: none;
+
+        }
+        .submit{
+            text-align: center;
+        }
+        input[type=submit],
+        input[type=reset]{
+            padding: .1em .2em;
+            border: 1px solid hsla(0, 0%, 0%, .3);
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background-color: black;
+            color:#efefef;
+            text-shadow: 0 --1px 0  hsla(0, 0%, 0%, .8);
+            font-size: 18px;
+        }
+        span{
+            color: red;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        function kiemtraHT(){
+            let mauKT1 = /([A-Za-z]+)((\s{1}[A-Za-z]+){1,})$/
+
+            let c = document.getElementById('txtTK').value.trim();
+            if (mauKT.test(c) == true) {
+                spTK.innerText = "Đã nhập đúng";
+                
+            } else {
+                spTK.innerText= "Đã sai mẫu nhập lại"
+            }
+
+        }
+    </script>
+    <div class="wrapper">
+        <form action="" method="post">
+            <fieldset>
+                <legend>
+                    Nhập thông tin kiểm tra
+                </legend>
+                <label for="lblHT">Kiểm tra họ tên đúng:</label>
+                <input type="text" name = "txtName" id="txtHT" onblur="return kiemTraHT();">
+                <span id="spHT">Chưa Nhập</span>
+                <br><br>
+                <label for="lblTK">Kiểm tra tài khoản đăng Nhập</label>
+                <input type="text" name="txtTK" onblur="return kiemTraTK();">
+                <span id="spTK">Chưa Nhập</span>
+                <br><br>
+            </fieldset>
+        </form>
+    </div>
+    <div>
+        <label for="txtDT" class="title">Điện thoại</label>
+        <input type="email" id="txtDT" name = "txtDT" size="30" placeholder="txtDT" /><span id="dienthoai">Phai la so/span>
+
+    </div>
+    <div>
+        <label for="txtEmail" class="title">Email</label>
+        <input type="email" id="txtEmail" name = "txtEmail" size="30" placeholder="txtEmail"/><span id="email">Nhap dung địa chỉ mail</span>
+    </div>
+    <div class="submit">
+        <input type="submit" value="đăng ký" id="submit" />
+        <input type="reset" value="Hủy" id="submit" />
+        </div>
+    </form>
+  
+</body>
+</html>
